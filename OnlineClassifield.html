@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Online Classifieds Search Form</title>
+    <style>
+        body {
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+            font-size: 13px;
+            margin: 0;
+            padding: 20px 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .container {
+            width: 580px;
+            background-color: #ccffff;
+            border: 2px solid #0055ff;
+            padding: 20px 25px;
+            box-sizing: border-box;
+        }
+
+        h2.title {
+            color: #ff0000;
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        hr {
+            border: 0;
+            border-top: 1px solid #778899;
+            margin: 10px 0 15px 0;
+        }
+
+        .section-title {
+            font-weight: bold;
+            margin-top: 15px;
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .grid-options {
+            margin-left: 10px;
+            border-collapse: collapse;
+        }
+
+        .grid-options td {
+            padding: 3px 15px 3px 0;
+            vertical-align: middle;
+        }
+
+        input[type="text"] {
+            border: 1px solid #7f9db9;
+            background-color: #ffffff;
+            padding: 2px 4px;
+            font-size: 13px;
+        }
+
+        .keywords-input {
+            width: 100%;
+            height: 22px;
+            box-sizing: border-box;
+        }
+
+        /* Khối các nút hình ảnh */
+        .buttons-container {
+            display: flex;
+            gap: 30px;
+            margin-top: 15px;
+            margin-left: 15px;
+        }
+
+        .buttons-container input[type="image"] {
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2 class="title">Online Classifieds Search Form</h2>
+        <hr />
+
+        <form id="classifiedForm" action="" method="get">
+            <!-- 1) Sections (Radio Buttons) -->
+            <div class="section-title">1) Search for a classified in the following sections:</div>
+            <table class="grid-options">
+                <tr>
+                    <td>
+                        <input type="radio" name="section" id="emp" value="Employment" />
+                        <label for="emp">Employment</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="section" id="pers" value="Personal" />
+                        <label for="pers">Personal</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="section" id="forsale" value="For Sale" checked />
+                        <label for="forsale">For Sale</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="section" id="misc" value="Miscellaneous" />
+                        <label for="misc">Miscellaneous</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="radio" name="section" id="housing" value="Housing" />
+                        <label for="housing">Housing</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="section" id="all_sections" value="All of the above" />
+                        <label for="all_sections">All of the above</label>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- 2) Publications (Checkboxes) -->
+            <div class="section-title">2) Search the following publications:</div>
+            <table class="grid-options">
+                <tr>
+                    <td>
+                        <input type="checkbox" name="pub" id="midwest" value="Midwest times" checked />
+                        <label for="midwest">Midwest times</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="pub" id="modern" value="Modern News" />
+                        <label for="modern">Modern News</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="pub" id="emptoday" value="Employment Today" />
+                        <label for="emptoday">Employment Today</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="pub" id="greatlakes" value="Great Lakes Classifieds" checked />
+                        <label for="greatlakes">Great Lakes Classifieds</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="pub" id="middleton" value="Middleton Daily" />
+                        <label for="middleton">Middleton Daily</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="pub" id="cashtown" value="Cashtown Daily News" />
+                        <label for="cashtown">Cashtown Daily News</label>
+                    </td>
+                </tr>
+            </table>
+
+            <!-- 3) From to Date -->
+            <div class="section-title">
+                3) From to <input type="text" name="fromDate" placeholder="mm/ydd/yy" size="14" /> 
+                to <input type="text" name="toDate" placeholder="mm/dd/yy" size="14" />.
+            </div>
+
+            <!-- 4) Keywords -->
+            <div class="section-title">4) Enter a few keywords to describe the classified.</div>
+            <div style="margin-top: 5px;">
+                <input type="text" name="keywords" class="keywords-input" />
+            </div>
+
+            <!-- 5) Action Buttons (Chỉ dùng ảnh, không dùng thẻ chữ thừa) -->
+            <div class="section-title">5) Click one of the options below:</div>
+            <div class="buttons-container">
+                <input type="image" src="Search.gif" alt="Search" onclick="handleSearch(); return false;" />
+                <input type="image" src="Help.gif" alt="Help" onclick="handleHelp(); return false;" />
+                <input type="image" src="Cancel.gif" alt="Cancel" onclick="handleCancel(); return false;" />
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // 1. Giả lập Search
+        function handleSearch() {
+            alert("Đang thực hiện tìm kiếm (Giả lập Search)...");
+        }
+
+        // 2. Giả lập Help: mở trang trợ giúp
+        function handleHelp() {
+            window.open("https://www.google.com", "_blank");
+        }
+
+        // 3. Giả lập Cancel: xóa trắng toàn bộ dữ liệu trên Form
+        function handleCancel() {
+            var form = document.getElementById("classifiedForm");
+
+            // Xóa ô nhập text
+            var inputs = form.querySelectorAll("input[type='text']");
+            for (var i = 0; i < inputs.length; i++) {
+                inputs[i].value = "";
+            }
+
+            // Bỏ chọn radio
+            var radios = form.querySelectorAll("input[type='radio']");
+            for (var i = 0; i < radios.length; i++) {
+                radios[i].checked = false;
+            }
+
+            // Bỏ chọn checkbox
+            var checkboxes = form.querySelectorAll("input[type='checkbox']");
+            for (var i = 0; i < checkboxes.length; i++) {
+                checkboxes[i].checked = false;
+            }
+        }
+    </script>
+
+</body>
+</html>
