@@ -1,23 +1,25 @@
 <html>
-    <head>
-        <title>Nguyễn Trần Yên Đan - K244161778</title>
-        <link rel="stylesheet" href="main.css">
-    </head>
-    <body>
-        <div id="container">
-        <ul>
+<head>
+    <title>Nguyễn Trần Yên Đan - K244161778</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="container">
+        <ul class="menu">
             <li><a href="index.html">HOME</a></li>
             <li><a href="#">HTML</a></li>
-            <li><a href="#">CSS</a>
-            <ul>
-                <li><a href="index42.html">Bài tập 42</a></li>
-                <li><a href="#">CSS CĂN BẢN</a></li>
-                <li><a href="#">GIAO DIỆN VỚI CSS</a></li>
-                <li><a href="#">CSS NÂNG CAO</a></li>
-            </ul>
+            <li>
+                <a href="#">CSS</a>
+                <ul class="sub-menu">
+                    <li><a href="index42.html">Bài tập 42</a></li>
+                    <li><a href="#">CSS CĂN BẢN</a></li>
+                    <li><a href="#">GIAO DIỆN VỚI CSS</a></li>
+                    <li><a href="#">CSS NÂNG CAO</a></li>
+                </ul>
             </li>
-            <li><a href="#">JAVASCRIPT</a>
-                <ul>
+            <li>
+                <a href="#">JAVASCRIPT</a>
+                <ul class="sub-menu">
                     <li><a href="#">LESSON 01</a></li>
                     <li><a href="#">LESSON 02</a></li>
                     <li><a href="#">LESSON 03</a></li>
@@ -25,13 +27,16 @@
             </li>
             <li><a href="#">HTML DOM</a></li>
             <li><a href="#">NGÔN NGỮ ASP</a></li>
-            <li><a href ="#">FORM</a></li>
-            <ul>
-                <li><a href="ClientGet.html">ClienrGet</a></li>
-                <li><a href="#">Bài 48</a></li>
-                <li><a href="#">Bài 49</a></li>
-            </ul>
+            <!-- Đặt thẻ <ul> con bên trong thẻ <li> này -->
+            <li>
+                <a href="#" class="blue-text">Learn Form</a>
+                <ul class="sub-menu">
+                    <li><a href="ClientGet.html">Client Get - Server Get</a></li>
+                    <li><a href="#">Bài 48</a></li>
+                    <li><a href="#">Bài 49</a></li>
+                </ul>
+            </li>
         </ul>
-        </div>
-    </body>
+    </div>
+</body>
 </html>
